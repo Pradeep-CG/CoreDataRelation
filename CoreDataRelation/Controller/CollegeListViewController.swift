@@ -64,6 +64,7 @@ extension CollegeListViewController: UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var detailVC = self.storyboard?.instantiateViewController(identifier: "CollegeDetailViewController") as! CollegeDetailViewController
+        detailVC.index = indexPath.row
         detailVC.detail = arrCollege[indexPath.row]
         self.navigationController?.pushViewController(detailVC, animated: true)
     }

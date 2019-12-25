@@ -187,6 +187,7 @@
                         <viewLayoutGuide key="safeArea" id="ZwB-yi-c5b"/>
                     </view>
                     <connections>
+                        <outlet property="saveBtn" destination="hYk-CC-ou2" id="PGj-jK-lm7"/>
                         <outlet property="txtCollegeAddress" destination="nwP-v3-Rnl" id="tKa-1r-wfg"/>
                         <outlet property="txtCollegeCity" destination="5WF-PY-TBg" id="TBO-Jx-YuC"/>
                         <outlet property="txtCollegeName" destination="cq0-7U-ao6" id="Ygd-Le-UfW"/>
@@ -340,6 +341,13 @@
                             <outlet property="delegate" destination="4tw-Jo-CWf" id="hYP-7D-Lhn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="jKM-JW-Fb9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="XRE-IU-lcf">
+                            <connections>
+                                <action selector="onEditClick:" destination="4tw-Jo-CWf" id="3oW-jF-3sQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collegeAddressLbl" destination="70x-11-lfF" id="5cJ-PS-an4"/>
                         <outlet property="collegeCityLbl" destination="nxi-5S-zrN" id="oVb-cK-ONL"/>
@@ -349,7 +357,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxr-Ke-KWG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2476.811594202899" y="116.51785714285714"/>
+            <point key="canvasLocation" x="3386.9565217391305" y="116.51785714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d6F-nd-ehI">
@@ -368,6 +376,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pey-Iu-aEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JXg-rO-0EV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D41-f2-33n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EnG-Zu-Qwg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4tw-Jo-CWf" kind="relationship" relationship="rootViewController" id="GIv-U6-Sgm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAW-1J-1po" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2476.811594202899" y="116.51785714285714"/>
         </scene>
     </scenes>
 </document>

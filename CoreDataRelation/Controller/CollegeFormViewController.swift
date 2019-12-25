@@ -18,14 +18,32 @@ class CollegeFormViewController: UIViewController {
     @IBOutlet weak var txtCollegeCity: UITextField!
     
     @IBOutlet weak var txtCollegeUniversity: UITextField!
+    @IBOutlet weak var saveBtn: UIButton!
     
+    var formDetail:College?
+    var isUpdate = false
+    var selectedIndex = Int()
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtCollegeName.text = formDetail?.name
+        txtCollegeAddress.text = formDetail?.address
+        txtCollegeCity.text = formDetail?.city
+        txtCollegeUniversity.text = formDetail?.university
+        
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if isUpdate {
+            saveBtn.setTitle("Update", for: .normal)
+        }
+        else{
+            saveBtn.setTitle("Save", for: .normal)
+        }
+    }
 
     
 }
@@ -55,7 +73,13 @@ extension CollegeFormViewController{
             "collegeCity":collegeCity,
             "collegeUniversity":collegeUniversity
         ]
+        if isUpdate {
+            isUpdate = false
+            DatabaseHelper.sharedInstance.updateCollegeData(dict: collegeDict, index: selectedIndex)
+        }
+        else{
+            DatabaseHelper.sharedInstance.saveCollegeData(collegeDict: collegeDict)
+        }
         
-        DatabaseHelper.sharedInstance.saveCollegeData(collegeDict: collegeDict)
     }
 }

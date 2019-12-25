@@ -56,4 +56,19 @@ class DatabaseHelper: NSObject {
         }
         return collegeData
     }
+    func updateCollegeData(dict:[String:String], index:Int) {
+        
+        var collegeDict = self.getAllCollegeData()
+        
+        collegeDict[index].name = dict["collegeName"]
+        collegeDict[index].address = dict["collegeAddress"]
+        collegeDict[index].city = dict["collegeCity"]
+        collegeDict[index].university = dict["collegeUniversity"]
+        
+        do {
+                   try context.save()
+               } catch {
+                   print("error = \(error.localizedDescription)")
+               }
+    }
 }

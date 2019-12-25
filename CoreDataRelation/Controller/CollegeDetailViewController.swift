@@ -16,19 +16,30 @@ class CollegeDetailViewController: UITableViewController {
     @IBOutlet weak var collegeCityLbl: UILabel!
     
     var detail:College?
+    var index = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
         print(detail)
         collegeNameLbl.text = detail?.name
         collegeCityLbl.text = detail?.city
         collegeAddressLbl.text = detail?.address
         collegeUniversityLbl.text = detail?.university
-        // Do any additional setup after loading the view.
+    }
+    @IBAction func onEditClick(_ sender: Any) {
+        
+        let collegeForm = self.storyboard?.instantiateViewController(withIdentifier: "CollegeFormViewController") as! CollegeFormViewController
+        collegeForm.selectedIndex = index
+        collegeForm.formDetail = detail
+        collegeForm.isUpdate = true
+        self.navigationController?.pushViewController(collegeForm, animated: true)
     }
     
-
     /*
     // MARK: - Navigation
 
