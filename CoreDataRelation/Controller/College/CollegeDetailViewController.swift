@@ -14,6 +14,7 @@ class CollegeDetailViewController: UITableViewController {
     @IBOutlet weak var collegeUniversityLbl: UILabel!
     @IBOutlet weak var collegeAddressLbl: UILabel!
     @IBOutlet weak var collegeCityLbl: UILabel!
+    @IBOutlet weak var studentLbl: UILabel!
     
     var detail:College?
     var index = Int()
@@ -30,6 +31,14 @@ class CollegeDetailViewController: UITableViewController {
         collegeCityLbl.text = detail?.city
         collegeAddressLbl.text = detail?.address
         collegeUniversityLbl.text = detail?.university
+        
+        if let student = detail?.students?.allObjects as? [Student] {
+            
+            studentLbl.text = "\(student.count)"
+        }
+        else{
+            studentLbl.text = "0"
+        }
     }
     @IBAction func onEditClick(_ sender: Any) {
         
@@ -39,15 +48,17 @@ class CollegeDetailViewController: UITableViewController {
         collegeForm.isUpdate = true
         self.navigationController?.pushViewController(collegeForm, animated: true)
     }
+}
+
+extension CollegeDetailViewController{
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 4{
+            
+            let studentlistVc = self.storyboard?.instantiateViewController(identifier: "StudentListViewController") as! StudentListViewController
+            studentlistVc.college = detail
+            self.navigationController?.pushViewController(studentlistVc, animated: true)
+            
+        }
     }
-    */
-
 }

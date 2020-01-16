@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		271880F923B39C35008829BB /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271880F823B39C35008829BB /* DatabaseHelper.swift */; };
+		274E0F4423D0C64A0059F818 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E0F4323D0C64A0059F818 /* StudentListViewController.swift */; };
+		274E0F4623D0C6580059F818 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E0F4523D0C6580059F818 /* StudentDetailViewController.swift */; };
 		2781557C23B3AD1600BDC912 /* collegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781557B23B3AD1600BDC912 /* collegeTableViewCell.swift */; };
 		2781558023B3E2D100BDC912 /* CollegeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781557F23B3E2D100BDC912 /* CollegeDetailViewController.swift */; };
 		27FA805623B393D80032C5FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA805523B393D80032C5FB /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		271880F823B39C35008829BB /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		274E0F4323D0C64A0059F818 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
+		274E0F4523D0C6580059F818 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
 		2781557B23B3AD1600BDC912 /* collegeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collegeTableViewCell.swift; sourceTree = "<group>"; };
 		2781557F23B3E2D100BDC912 /* CollegeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeDetailViewController.swift; sourceTree = "<group>"; };
 		27FA805223B393D80032C5FB /* CoreDataRelation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataRelation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,9 +62,8 @@
 		271880FA23B39C3C008829BB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				27FA805923B393D80032C5FB /* CollegeListViewController.swift */,
-				27FA806C23B399F40032C5FB /* CollegeFormViewController.swift */,
-				2781557F23B3E2D100BDC912 /* CollegeDetailViewController.swift */,
+				274E0F4823D0C7940059F818 /* College */,
+				274E0F4723D0C7830059F818 /* Student */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -71,6 +74,25 @@
 				2781557B23B3AD1600BDC912 /* collegeTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		274E0F4723D0C7830059F818 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				274E0F4323D0C64A0059F818 /* StudentListViewController.swift */,
+				274E0F4523D0C6580059F818 /* StudentDetailViewController.swift */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		274E0F4823D0C7940059F818 /* College */ = {
+			isa = PBXGroup;
+			children = (
+				27FA805923B393D80032C5FB /* CollegeListViewController.swift */,
+				27FA806C23B399F40032C5FB /* CollegeFormViewController.swift */,
+				2781557F23B3E2D100BDC912 /* CollegeDetailViewController.swift */,
+			);
+			path = College;
 			sourceTree = "<group>";
 		};
 		27FA804923B393D80032C5FB = {
@@ -178,11 +200,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				27FA805A23B393D80032C5FB /* CollegeListViewController.swift in Sources */,
+				274E0F4423D0C64A0059F818 /* StudentListViewController.swift in Sources */,
 				27FA805623B393D80032C5FB /* AppDelegate.swift in Sources */,
 				27FA806023B393D80032C5FB /* CoreDataRelation.xcdatamodeld in Sources */,
 				2781558023B3E2D100BDC912 /* CollegeDetailViewController.swift in Sources */,
 				27FA805823B393D80032C5FB /* SceneDelegate.swift in Sources */,
 				271880F923B39C35008829BB /* DatabaseHelper.swift in Sources */,
+				274E0F4623D0C6580059F818 /* StudentDetailViewController.swift in Sources */,
 				27FA806D23B399F40032C5FB /* CollegeFormViewController.swift in Sources */,
 				2781557C23B3AD1600BDC912 /* collegeTableViewCell.swift in Sources */,
 			);
